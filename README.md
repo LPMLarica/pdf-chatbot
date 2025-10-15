@@ -140,17 +140,8 @@ Fontes:
 ### 🔁 Fluxo de Funcionamento
 ---
 
-```
-flowchart TD
-    A[📄 Upload do PDF] --> B[🔍 Extração de texto]
-    B --> C[✂️ Divisão em trechos (chunks)]
-    C --> D[🧠 Geração de embeddings]
-    D --> E[💾 Armazenamento no banco vetorial FAISS]
-    F[💬 Usuário faz pergunta] --> G[🔎 Busca semântica]
-    G --> H[📚 Recupera trechos relevantes]
-    H --> I[🗣️ Modelo de linguagem gera resposta]
-    I --> J[✅ Exibe resposta ao usuário]
-```
+<img width="924" height="888" alt="Fluxo de Funcionamento de um Sistema de Perguntas e Respostas Baseado em IA - visual selection" src="https://github.com/user-attachments/assets/042a6680-0070-4b55-9009-055a730f097d" />
+
 
 ---
 
@@ -217,4 +208,4 @@ Envie um PR
 Distribuído sob licença MIT.
 Sinta-se à vontade para usar, modificar e compartilhar.
 
-```<p align="center"> Feito com carinho por <b>Larissa Campos Cardoso membro GRVA-UFU</b> — Projeto Chatbot PDF 💬 </p>```
+<p align="center"> Feito com carinho por <b>Larissa Campos Cardoso membro GRVA-UFU</b> — Projeto Chatbot PDF 💬 </p>
