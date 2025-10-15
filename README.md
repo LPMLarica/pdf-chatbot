@@ -27,14 +27,23 @@ O sistema pode ser utilizado para:
 ## 🧩 Arquitetura do Projeto
 
 📁 pdf-chatbot/
+
   ├─ data/ → PDFs para indexar
+  
   ├─ models/ → Embeddings e índices FAISS
+  
   ├─ indexer.py → Cria o banco vetorial a partir dos PDFs
+  
   ├─ retriever.py → Busca semântica nos documentos
+  
   ├─ api.py → API FastAPI para respostas automáticas
+
   ├─ streamlit_app.py → Interface visual de chat
+  
   ├─ utils.py → Funções auxiliares (extração, chunking, limpeza)
+  
   ├─ requirements.txt → Dependências do projeto
+  
   └─ README.md → Este arquivo
 
 
@@ -56,51 +65,76 @@ O sistema pode ser utilizado para:
 ## 🚀 Como Executar o Projeto
 
 ### 1️⃣ Clonar o Repositório
+
 git clone https://github.com/seu-usuario/pdf-chatbot.git
+
 cd pdf-chatbot
 
 ---
 
 ### 2️⃣ Criar e Ativar Ambiente Virtual
+
+Criação do ambiente:
 python -m venv .venv
- source .venv/bin/activate      
- .venv\Scripts\activate       
+
+Ativação do ambiente:
+
+Linux/IOS:
+source .venv/bin/activate  
+
+Windows: 
+.venv\Scripts\activate       
 
 ---
 
 ### 3️⃣ Instalar Dependências
+
 pip install -r requirements.txt
 
 ---
 
 ### 4️⃣ Adicionar os PDFs
+
 Coloque todos os seus arquivos PDF dentro da pasta:
 
 data/
+
 Exemplo:
+
 data/
+
 ├─ Manual_Interno.pdf
+
 ├─ Relatorio_2024.pdf
+
 └─ Politica_de_Seguranca.pdf
 
 ---
 
 ### 5️⃣ Indexar os PDFs
+
 Execute o indexador para gerar os embeddings e criar o banco FAISS:
+
 python indexer.py --pdf-folder data
+
 Isso irá criar:
 
 models/
+
 ├─ faiss.index
+
 ├─ metadata.json
+
 └─ texts.json
 
 ---
 
 ### 6️⃣ Configurar a Chave da OpenAI
+
 Se quiser usar o modelo GPT para respostas mais precisas, crie um arquivo .env na raiz do projeto:
 
 OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxx
+
 Caso não configure, o sistema usará modelos locais do transformers.
 
 ---
@@ -110,14 +144,16 @@ uvicorn api:app --host 0.0.0.0 --port 8000 --reload
 Acesse no navegador:
 
 http://localhost:8000/docs
+
  Lá você pode testar o endpoint /chat.
 
 ---
 
 ### 8️⃣ Executar o Frontend (Streamlit)
-Em outro terminal, rode:
 
+Em outro terminal, rode:
 streamlit run streamlit_app.py
+
 Acesse:
 http://localhost:8501/
 
@@ -125,12 +161,15 @@ http://localhost:8501/
 
 ### 💬 Exemplo de Uso
 Pergunta:
+
 “Qual é o objetivo principal do projeto descrito no documento?”
 
 Resposta esperada:
+
 O projeto visa desenvolver um sistema de chatbot capaz de responder perguntas com base em informações extraídas de documentos PDF, utilizando técnicas de Processamento de Linguagem Natural e Machine Learning.
 
 Fontes:
+
 📄 Manual_Interno.pdf 
 
 📄 Relatorio_2024.pdf 
@@ -159,19 +198,26 @@ O modelo de linguagem gera uma resposta fundamentada.
 ---
 
 ### 🧠 Estrutura Lógica Simplificada
-# pipeline resumido
+pipeline resumido:
 
 pdf_texts = extract_text_from_pdf("Relatorio.pdf")
+
 chunks = chunk_text(pdf_texts)
+
 embeddings = model.encode(chunks)
+
 index.add(embeddings)
 
-# consulta
+consultas:
+
 question = "O que é o objetivo do projeto?"
+
 query_vec = model.encode([question])
+
 result = index.search(query_vec, top_k=5)
 
-# resposta (via OpenAI ou local)
+resposta (via OpenAI ou local):
+
 answer = generate_answer(context, question)
 
 ---
@@ -192,7 +238,9 @@ Você pode:
 ---
 
 ### 🧑‍💻 Contribuindo
+
 Pull requests são bem-vindos!
+
 Se quiser contribuir:
 
 Faça um fork 
@@ -206,7 +254,10 @@ Envie um PR
 ---
 
 ### 🪪 Licença
+
 Distribuído sob licença MIT.
+
 Sinta-se à vontade para usar, modificar e compartilhar.
+
 
 <p align="center"> Feito com carinho por <b>Larissa Campos Cardoso membro GRVA-UFU</b> — Projeto Chatbot PDF 💬 </p>
