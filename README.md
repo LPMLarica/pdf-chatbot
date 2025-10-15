@@ -62,9 +62,9 @@ O sistema pode ser utilizado para:
 
 ---
 
-## 🚀 Como Executar o Projeto
+# 🚀 Como Executar o Projeto
 
-### 1️⃣ Clonar o Repositório
+## 1️⃣ Clonar o Repositório
 
 git clone https://github.com/seu-usuario/pdf-chatbot.git
 
@@ -72,7 +72,7 @@ cd pdf-chatbot
 
 ---
 
-### 2️⃣ Criar e Ativar Ambiente Virtual
+## 2️⃣ Criar e Ativar Ambiente Virtual
 
 Criação do ambiente:
 python -m venv .venv
@@ -87,13 +87,13 @@ Windows:
 
 ---
 
-### 3️⃣ Instalar Dependências
+## 3️⃣ Instalar Dependências
 
 pip install -r requirements.txt
 
 ---
 
-### 4️⃣ Adicionar os PDFs
+## 4️⃣ Adicionar os PDFs
 
 Coloque todos os seus arquivos PDF dentro da pasta:
 
@@ -111,7 +111,7 @@ data/
 
 ---
 
-### 5️⃣ Indexar os PDFs
+## 5️⃣ Indexar os PDFs
 
 Execute o indexador para gerar os embeddings e criar o banco FAISS:
 
@@ -129,7 +129,7 @@ models/
 
 ---
 
-### 6️⃣ Configurar a Chave da OpenAI
+## 6️⃣ Configurar a Chave da OpenAI
 
 Se quiser usar o modelo GPT para respostas mais precisas, crie um arquivo .env na raiz do projeto:
 
@@ -139,7 +139,7 @@ Caso não configure, o sistema usará modelos locais do transformers.
 
 ---
 
-### 7️⃣ Executar a API Backend
+## 7️⃣ Executar a API Backend
 
 uvicorn api:
 app --host 0.0.0.0 --port 8000 --reload
@@ -147,11 +147,11 @@ app --host 0.0.0.0 --port 8000 --reload
 Acesse no navegador:
 http://localhost:8000/docs
 
-### Lá você pode testar o endpoint /chat.
+## Lá você pode testar o endpoint /chat.
 
 ---
 
-### 8️⃣ Executar o Frontend (Streamlit)
+## 8️⃣ Executar o Frontend (Streamlit)
 
 Em outro terminal, rode:
 streamlit run streamlit_app.py
@@ -161,7 +161,7 @@ http://localhost:8501/
 
 ---
 
-### 💬 Exemplo de Uso
+## 💬 Exemplo de Uso
 Pergunta:
 “Qual é o objetivo principal do projeto descrito no documento?”
 
@@ -176,8 +176,8 @@ Fontes:
 
 ---
 
-### 🔁 Fluxo de Funcionamento
----
+## 🔁 Fluxo de Funcionamento
+
 
 <img width="817" height="724" alt="Fluxo de Funcionamento de um Sistema de Perguntas e Respostas Baseado em IA - visual selection" src="https://github.com/user-attachments/assets/727091d9-6207-4822-ba28-4016447d8f74" />
 
@@ -185,7 +185,7 @@ Fontes:
 
 ---
 
-### 🔹 Etapas do fluxo:
+## 🔹 Etapas do fluxo:
 
 O usuário envia uma pergunta.
 
@@ -197,32 +197,37 @@ O modelo de linguagem gera uma resposta fundamentada.
 
 ---
 
-### 🧠 Estrutura Lógica Simplificada
+## 🧠 Estrutura Lógica Simplificada
+
 ### Pipeline resumido:
 
-pdf_texts = extract_text_from_pdf("Relatorio.pdf")
+ - pdf_texts = extract_text_from_pdf("Relatorio.pdf");
 
-chunks = chunk_text(pdf_texts)
+ - chunks = chunk_text(pdf_texts);
 
-embeddings = model.encode(chunks)
+ - embeddings = model.encode(chunks);
 
-index.add(embeddings)
-
-### Consultas:
-
-question = "O que é o objetivo do projeto?"
-
-query_vec = model.encode([question])
-
-result = index.search(query_vec, top_k=5)
-
-### Respostas (via OpenAI ou local):
-
-answer = generate_answer(context, question)
+ - index.add(embeddings);
 
 ---
 
-### 🧰 Personalização
+### Consultas:
+
+ - question = "O que é o objetivo do projeto?";
+
+ - query_vec = model.encode([question]);
+
+ - result = index.search(query_vec, top_k=5);
+
+---
+
+### Respostas (via OpenAI ou local):
+
+ - answer = generate_answer(context, question)
+
+---
+
+## 🧰 Personalização
 Você pode:
 
 🔄 Trocar FAISS por Qdrant ou Pinecone;
@@ -237,23 +242,23 @@ Você pode:
 
 ---
 
-### 🧑‍💻 Contribuindo
+## 🧑‍💻 Contribuindo
 
-Pull requests são bem-vindos!
+### Pull requests são bem-vindos!
 
 Se quiser contribuir:
 
-  1- Faça um fork 
+  - Faça um fork;
 
-  2- Crie uma branch
+  - Crie uma branch;
 
-  3- Faça suas alterações 
+  - Faça suas alterações;
 
-  4- Envie um PR 
+  - Envie um PR;
 
 ---
 
-### 🪪 Licença
+## 🪪 Licença
 
 Distribuído sob licença MIT.
 
