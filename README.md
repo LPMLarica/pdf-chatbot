@@ -147,7 +147,7 @@ app --host 0.0.0.0 --port 8000 --reload
 Acesse no navegador:
 http://localhost:8000/docs
 
-# Lá você pode testar o endpoint /chat.
+### Lá você pode testar o endpoint /chat.
 
 ---
 
@@ -198,7 +198,7 @@ O modelo de linguagem gera uma resposta fundamentada.
 ---
 
 ### 🧠 Estrutura Lógica Simplificada
-pipeline resumido:
+### Pipeline resumido:
 
 pdf_texts = extract_text_from_pdf("Relatorio.pdf")
 
@@ -208,7 +208,7 @@ embeddings = model.encode(chunks)
 
 index.add(embeddings)
 
-consultas:
+### Consultas:
 
 question = "O que é o objetivo do projeto?"
 
@@ -216,7 +216,7 @@ query_vec = model.encode([question])
 
 result = index.search(query_vec, top_k=5)
 
-resposta (via OpenAI ou local):
+### Respostas (via OpenAI ou local):
 
 answer = generate_answer(context, question)
 
@@ -243,13 +243,13 @@ Pull requests são bem-vindos!
 
 Se quiser contribuir:
 
-Faça um fork 
+  1- Faça um fork 
 
-Crie uma branch
+  2- Crie uma branch
 
-Faça suas alterações 
+  3- Faça suas alterações 
 
-Envie um PR 
+  4- Envie um PR 
 
 ---
 
