@@ -61,13 +61,19 @@ Copiar código
 git clone https://github.com/seu-usuario/pdf-chatbot.git
 cd pdf-chatbot
 
+---
+
 ### 2️⃣ Criar e Ativar Ambiente Virtual
 python -m venv .venv
-# source .venv/bin/activate      # Linux/Mac
-# .venv\Scripts\activate       # Windows
+ source .venv/bin/activate      
+ .venv\Scripts\activate       
+
+---
 
 ### 3️⃣ Instalar Dependências
 pip install -r requirements.txt
+
+---
 
 ### 4️⃣ Adicionar os PDFs
 Coloque todos os seus arquivos PDF dentro da pasta:
@@ -79,6 +85,8 @@ data/
 ├─ Relatorio_2024.pdf
 └─ Politica_de_Seguranca.pdf
 
+---
+
 ### 5️⃣ Indexar os PDFs
 Execute o indexador para gerar os embeddings e criar o banco FAISS:
 python indexer.py --pdf-folder data
@@ -89,18 +97,24 @@ models/
 ├─ metadata.json
 └─ texts.json
 
+---
+
 ### 6️⃣ Configurar a Chave da OpenAI
 Se quiser usar o modelo GPT para respostas mais precisas, crie um arquivo .env na raiz do projeto:
 
 OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxx
 Caso não configure, o sistema usará modelos locais do transformers.
 
+---
+
 ### 7️⃣ Executar a API Backend
 uvicorn api:app --host 0.0.0.0 --port 8000 --reload
 Acesse no navegador:
 
 http://localhost:8000/docs
-✨ Lá você pode testar o endpoint /chat.
+ Lá você pode testar o endpoint /chat.
+
+---
 
 ### 8️⃣ Executar o Frontend (Streamlit)
 Em outro terminal, rode:
@@ -108,6 +122,8 @@ Em outro terminal, rode:
 streamlit run streamlit_app.py
 Acesse:
 http://localhost:8501/
+
+---
 
 ### 💬 Exemplo de Uso
 Pergunta:
@@ -117,12 +133,17 @@ Resposta esperada:
 O projeto visa desenvolver um sistema de chatbot capaz de responder perguntas com base em informações extraídas de documentos PDF, utilizando técnicas de Processamento de Linguagem Natural e Machine Learning.
 
 Fontes:
-📄 Manual_Interno.pdf (chunk 2)
+📄 Manual_Interno.pdf 
 
-📄 Relatorio_2024.pdf (chunk 1)
+📄 Relatorio_2024.pdf 
+
+---
 
 ### 🔁 Fluxo de Funcionamento
 <p align="center"> <img src="https://mermaid.ink/img/pako:eNqNkc1OwzAQRX8F2RYHg8V2QFkR5wiRIEkbRpZVqRuUVm6RMRP-fuXKS5rHbX_3vfs8lMImh6EczxzN3Nhw8s7UCxQTBZ6FK1T0KUBSRV6jqLgZLBaKUXzngy1xDZ4e5tBhkoeFdxK1VEyJCBu4vQ4cY4nDS7VikDE3Z6s7qCghAGFpFwlvPQGgHyOlEPUoN0ZZfvmQ-JTx1MzvHKmugkyCXqDoyVXzIEJwCuQkqvUsKqv2MSVqNKq8mkoXLxV4_gzL4K5iA0rztRpMqPGW9qapPLzyae65rAtHwHcE6p9WUv9UeV_dC6bxvHgJne-DNULsIV" width="700px" alt="Diagrama do fluxo do chatbot"> </p>
+
+---
+
 ### 🔹 Etapas do fluxo:
 
 O usuário envia uma pergunta.
@@ -132,6 +153,8 @@ O sistema busca trechos similares nos PDFs via embeddings.
 Os trechos mais relevantes são combinados em um contexto.
 
 O modelo de linguagem gera uma resposta fundamentada.
+
+---
 
 ### 🧠 Estrutura Lógica Simplificada
 # pipeline resumido
@@ -149,6 +172,8 @@ result = index.search(query_vec, top_k=5)
 # resposta (via OpenAI ou local)
 answer = generate_answer(context, question)
 
+---
+
 ### 🧰 Personalização
 Você pode:
 
@@ -162,17 +187,21 @@ Você pode:
 
 📈 Monitorar logs e métricas no Streamlit.
 
+---
+
 ### 🧑‍💻 Contribuindo
 Pull requests são bem-vindos!
 Se quiser contribuir:
 
-Faça um fork 🍴
+Faça um fork 
 
-Crie uma branch (git checkout -b feature/nome)
+Crie uma branch
 
-Faça suas alterações ✨
+Faça suas alterações 
 
-Envie um PR 🚀
+Envie um PR 
+
+---
 
 ### 🪪 Licença
 Distribuído sob licença MIT.
