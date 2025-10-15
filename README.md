@@ -59,20 +59,20 @@ Copiar código
 
 ### 1️⃣ Clonar o Repositório
 
-```bash
+# ```bash
 git clone https://github.com/seu-usuario/pdf-chatbot.git
 cd pdf-chatbot
-2️⃣ Criar e Ativar Ambiente Virtual
+### 2️⃣ Criar e Ativar Ambiente Virtual
 bash
 Copiar código
 python -m venv .venv
 # source .venv/bin/activate      # Linux/Mac
 # .venv\Scripts\activate       # Windows
-3️⃣ Instalar Dependências
+### 3️⃣ Instalar Dependências
 bash
 Copiar código
 pip install -r requirements.txt
-4️⃣ Adicionar os PDFs
+### 4️⃣ Adicionar os PDFs
 Coloque todos os seus arquivos PDF dentro da pasta:
 
 kotlin
@@ -86,7 +86,7 @@ data/
 ├─ Manual_Interno.pdf
 ├─ Relatorio_2024.pdf
 └─ Politica_de_Seguranca.pdf
-5️⃣ Indexar os PDFs
+### 5️⃣ Indexar os PDFs
 Execute o indexador para gerar os embeddings e criar o banco FAISS:
 
 bash
@@ -100,7 +100,7 @@ models/
 ├─ faiss.index
 ├─ metadata.json
 └─ texts.json
-6️⃣ (Opcional) Configurar a Chave da OpenAI
+### 6️⃣ Configurar a Chave da OpenAI
 Se quiser usar o modelo GPT para respostas mais precisas, crie um arquivo .env na raiz do projeto:
 
 ini
@@ -108,7 +108,7 @@ Copiar código
 OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxx
 Caso não configure, o sistema usará modelos locais do transformers.
 
-7️⃣ Executar a API Backend
+### 7️⃣ Executar a API Backend
 bash
 Copiar código
 uvicorn api:app --host 0.0.0.0 --port 8000 --reload
@@ -119,7 +119,7 @@ Copiar código
 http://localhost:8000/docs
 ✨ Lá você pode testar o endpoint /chat.
 
-8️⃣ Executar o Frontend (Streamlit)
+### 8️⃣ Executar o Frontend (Streamlit)
 Em outro terminal, rode:
 
 bash
@@ -130,7 +130,7 @@ Acesse:
 arduino
 Copiar código
 http://localhost:8501/
-💬 Exemplo de Uso
+### 💬 Exemplo de Uso
 Pergunta:
 “Qual é o objetivo principal do projeto descrito no documento?”
 
@@ -142,9 +142,9 @@ Fontes:
 
 📄 Relatorio_2024.pdf (chunk 1)
 
-🔁 Fluxo de Funcionamento
+### 🔁 Fluxo de Funcionamento
 <p align="center"> <img src="https://mermaid.ink/img/pako:eNqNkc1OwzAQRX8F2RYHg8V2QFkR5wiRIEkbRpZVqRuUVm6RMRP-fuXKS5rHbX_3vfs8lMImh6EczxzN3Nhw8s7UCxQTBZ6FK1T0KUBSRV6jqLgZLBaKUXzngy1xDZ4e5tBhkoeFdxK1VEyJCBu4vQ4cY4nDS7VikDE3Z6s7qCghAGFpFwlvPQGgHyOlEPUoN0ZZfvmQ-JTx1MzvHKmugkyCXqDoyVXzIEJwCuQkqvUsKqv2MSVqNKq8mkoXLxV4_gzL4K5iA0rztRpMqPGW9qapPLzyae65rAtHwHcE6p9WUv9UeV_dC6bxvHgJne-DNULsIV" width="700px" alt="Diagrama do fluxo do chatbot"> </p>
-🔹 Etapas do fluxo:
+### 🔹 Etapas do fluxo:
 
 O usuário envia uma pergunta.
 
@@ -154,7 +154,7 @@ Os trechos mais relevantes são combinados em um contexto.
 
 O modelo de linguagem gera uma resposta fundamentada.
 
-🧠 Estrutura Lógica Simplificada
+### 🧠 Estrutura Lógica Simplificada
 python
 Copiar código
 # pipeline resumido
@@ -171,7 +171,7 @@ result = index.search(query_vec, top_k=5)
 
 # resposta (via OpenAI ou local)
 answer = generate_answer(context, question)
-🧰 Personalização
+### 🧰 Personalização
 Você pode:
 
 🔄 Trocar FAISS por Qdrant ou Pinecone;
@@ -184,7 +184,7 @@ Você pode:
 
 📈 Monitorar logs e métricas no Streamlit.
 
-🧑‍💻 Contribuindo
+### 🧑‍💻 Contribuindo
 Pull requests são bem-vindos!
 Se quiser contribuir:
 
@@ -196,7 +196,7 @@ Faça suas alterações ✨
 
 Envie um PR 🚀
 
-🪪 Licença
+### 🪪 Licença
 Distribuído sob licença MIT.
 Sinta-se à vontade para usar, modificar e compartilhar.
 
