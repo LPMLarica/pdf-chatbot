@@ -57,19 +57,18 @@ Copiar código
 
 ## 🚀 Como Executar o Projeto
 
-```
 ### 1️⃣ Clonar o Repositório
-
 git clone https://github.com/seu-usuario/pdf-chatbot.git
 cd pdf-chatbot
+
 ### 2️⃣ Criar e Ativar Ambiente Virtual
-Copiar código
 python -m venv .venv
 # source .venv/bin/activate      # Linux/Mac
 # .venv\Scripts\activate       # Windows
+
 ### 3️⃣ Instalar Dependências
-Copiar código
 pip install -r requirements.txt
+
 ### 4️⃣ Adicionar os PDFs
 Coloque todos os seus arquivos PDF dentro da pasta:
 
@@ -79,6 +78,7 @@ data/
 ├─ Manual_Interno.pdf
 ├─ Relatorio_2024.pdf
 └─ Politica_de_Seguranca.pdf
+
 ### 5️⃣ Indexar os PDFs
 Execute o indexador para gerar os embeddings e criar o banco FAISS:
 python indexer.py --pdf-folder data
@@ -88,6 +88,7 @@ models/
 ├─ faiss.index
 ├─ metadata.json
 └─ texts.json
+
 ### 6️⃣ Configurar a Chave da OpenAI
 Se quiser usar o modelo GPT para respostas mais precisas, crie um arquivo .env na raiz do projeto:
 
@@ -147,6 +148,7 @@ result = index.search(query_vec, top_k=5)
 
 # resposta (via OpenAI ou local)
 answer = generate_answer(context, question)
+
 ### 🧰 Personalização
 Você pode:
 
@@ -176,5 +178,4 @@ Envie um PR 🚀
 Distribuído sob licença MIT.
 Sinta-se à vontade para usar, modificar e compartilhar.
 
-<p align="center"> Feito com 💙 por <b>Larissa Campos</b> — Projeto Chatbot PDF 💬 </p>
-```
+```<p align="center"> Feito com carinho por <b>Larissa Campos Cardoso membro GRVA-UFU</b> — Projeto Chatbot PDF 💬 </p>```
