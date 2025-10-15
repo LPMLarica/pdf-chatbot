@@ -140,7 +140,8 @@ Fontes:
 ### 🔁 Fluxo de Funcionamento
 ---
 
-<img width="924" height="888" alt="Fluxo de Funcionamento de um Sistema de Perguntas e Respostas Baseado em IA - visual selection" src="https://github.com/user-attachments/assets/042a6680-0070-4b55-9009-055a730f097d" />
+<img width="817" height="724" alt="Fluxo de Funcionamento de um Sistema de Perguntas e Respostas Baseado em IA - visual selection" src="https://github.com/user-attachments/assets/727091d9-6207-4822-ba28-4016447d8f74" />
+
 
 
 ---
