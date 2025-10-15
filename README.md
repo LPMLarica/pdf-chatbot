@@ -57,45 +57,33 @@ Copiar código
 
 ## 🚀 Como Executar o Projeto
 
+```
 ### 1️⃣ Clonar o Repositório
 
-# ```bash
 git clone https://github.com/seu-usuario/pdf-chatbot.git
 cd pdf-chatbot
 ### 2️⃣ Criar e Ativar Ambiente Virtual
-bash
 Copiar código
 python -m venv .venv
 # source .venv/bin/activate      # Linux/Mac
 # .venv\Scripts\activate       # Windows
 ### 3️⃣ Instalar Dependências
-bash
 Copiar código
 pip install -r requirements.txt
 ### 4️⃣ Adicionar os PDFs
 Coloque todos os seus arquivos PDF dentro da pasta:
 
-kotlin
-Copiar código
 data/
 Exemplo:
-
-kotlin
-Copiar código
 data/
 ├─ Manual_Interno.pdf
 ├─ Relatorio_2024.pdf
 └─ Politica_de_Seguranca.pdf
 ### 5️⃣ Indexar os PDFs
 Execute o indexador para gerar os embeddings e criar o banco FAISS:
-
-bash
-Copiar código
 python indexer.py --pdf-folder data
 Isso irá criar:
 
-pgsql
-Copiar código
 models/
 ├─ faiss.index
 ├─ metadata.json
@@ -103,33 +91,23 @@ models/
 ### 6️⃣ Configurar a Chave da OpenAI
 Se quiser usar o modelo GPT para respostas mais precisas, crie um arquivo .env na raiz do projeto:
 
-ini
-Copiar código
 OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxx
 Caso não configure, o sistema usará modelos locais do transformers.
 
 ### 7️⃣ Executar a API Backend
-bash
-Copiar código
 uvicorn api:app --host 0.0.0.0 --port 8000 --reload
 Acesse no navegador:
 
-bash
-Copiar código
 http://localhost:8000/docs
 ✨ Lá você pode testar o endpoint /chat.
 
 ### 8️⃣ Executar o Frontend (Streamlit)
 Em outro terminal, rode:
 
-bash
-Copiar código
 streamlit run streamlit_app.py
 Acesse:
-
-arduino
-Copiar código
 http://localhost:8501/
+
 ### 💬 Exemplo de Uso
 Pergunta:
 “Qual é o objetivo principal do projeto descrito no documento?”
@@ -155,8 +133,6 @@ Os trechos mais relevantes são combinados em um contexto.
 O modelo de linguagem gera uma resposta fundamentada.
 
 ### 🧠 Estrutura Lógica Simplificada
-python
-Copiar código
 # pipeline resumido
 
 pdf_texts = extract_text_from_pdf("Relatorio.pdf")
@@ -200,4 +176,5 @@ Envie um PR 🚀
 Distribuído sob licença MIT.
 Sinta-se à vontade para usar, modificar e compartilhar.
 
-<p align="center"> Feito com 💙 por <b>Larissa Campos</b> — Projeto Chatbot PDF 💬 </p> ```
+<p align="center"> Feito com 💙 por <b>Larissa Campos</b> — Projeto Chatbot PDF 💬 </p>
+```
