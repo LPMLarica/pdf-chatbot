@@ -141,7 +141,6 @@ Fontes:
 ---
 
 ```
-mermaid
 flowchart TD
     A[📄 Upload do PDF] --> B[🔍 Extração de texto]
     B --> C[✂️ Divisão em trechos (chunks)]
