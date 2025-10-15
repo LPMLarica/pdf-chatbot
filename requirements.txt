@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+python-dotenv
+PyMuPDF
+sentence-transformers
+faiss-cpu
+numpy
+tqdm
+pydantic
+openai
+transformers
+torch
+streamlit
