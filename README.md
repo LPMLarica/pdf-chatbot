@@ -27,18 +27,16 @@ O sistema pode ser utilizado para:
 ## 🧩 Arquitetura do Projeto
 
 📁 pdf-chatbot/
-├─ data/ → PDFs para indexar
-├─ models/ → Embeddings e índices FAISS
-├─ indexer.py → Cria o banco vetorial a partir dos PDFs
-├─ retriever.py → Busca semântica nos documentos
-├─ api.py → API FastAPI para respostas automáticas
-├─ streamlit_app.py → Interface visual de chat
-├─ utils.py → Funções auxiliares (extração, chunking, limpeza)
-├─ requirements.txt → Dependências do projeto
-└─ README.md → Este arquivo
+  ├─ data/ → PDFs para indexar
+  ├─ models/ → Embeddings e índices FAISS
+  ├─ indexer.py → Cria o banco vetorial a partir dos PDFs
+  ├─ retriever.py → Busca semântica nos documentos
+  ├─ api.py → API FastAPI para respostas automáticas
+  ├─ streamlit_app.py → Interface visual de chat
+  ├─ utils.py → Funções auxiliares (extração, chunking, limpeza)
+  ├─ requirements.txt → Dependências do projeto
+  └─ README.md → Este arquivo
 
-yaml
-Copiar código
 
 ---
 
