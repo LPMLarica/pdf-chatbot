@@ -264,5 +264,6 @@ Distribuído sob licença MIT.
 
 Sinta-se à vontade para usar, modificar e compartilhar.
 
+---
 
 <p align="center"> Feito com carinho por <b>Larissa Campos Cardoso membro GRVA-UFU</b> — Projeto Chatbot PDF 💬 </p>
