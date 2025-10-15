@@ -138,7 +138,20 @@ Fontes:
 ---
 
 ### 🔁 Fluxo de Funcionamento
-<p align="center"> <img src="https://mermaid.ink/img/pako:eNqNkc1OwzAQRX8F2RYHg8V2QFkR5wiRIEkbRpZVqRuUVm6RMRP-fuXKS5rHbX_3vfs8lMImh6EczxzN3Nhw8s7UCxQTBZ6FK1T0KUBSRV6jqLgZLBaKUXzngy1xDZ4e5tBhkoeFdxK1VEyJCBu4vQ4cY4nDS7VikDE3Z6s7qCghAGFpFwlvPQGgHyOlEPUoN0ZZfvmQ-JTx1MzvHKmugkyCXqDoyVXzIEJwCuQkqvUsKqv2MSVqNKq8mkoXLxV4_gzL4K5iA0rztRpMqPGW9qapPLzyae65rAtHwHcE6p9WUv9UeV_dC6bxvHgJne-DNULsIV" width="700px" alt="Diagrama do fluxo do chatbot"> </p>
+---
+
+```
+mermaid
+flowchart TD
+    A[📄 Upload do PDF] --> B[🔍 Extração de texto]
+    B --> C[✂️ Divisão em trechos (chunks)]
+    C --> D[🧠 Geração de embeddings]
+    D --> E[💾 Armazenamento no banco vetorial FAISS]
+    F[💬 Usuário faz pergunta] --> G[🔎 Busca semântica]
+    G --> H[📚 Recupera trechos relevantes]
+    H --> I[🗣️ Modelo de linguagem gera resposta]
+    I --> J[✅ Exibe resposta ao usuário]
+```
 
 ---
 
