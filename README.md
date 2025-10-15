@@ -140,12 +140,14 @@ Caso não configure, o sistema usará modelos locais do transformers.
 ---
 
 ### 7️⃣ Executar a API Backend
-uvicorn api:app --host 0.0.0.0 --port 8000 --reload
-Acesse no navegador:
 
+uvicorn api:
+app --host 0.0.0.0 --port 8000 --reload
+
+Acesse no navegador:
 http://localhost:8000/docs
 
- Lá você pode testar o endpoint /chat.
+# Lá você pode testar o endpoint /chat.
 
 ---
 
@@ -161,11 +163,9 @@ http://localhost:8501/
 
 ### 💬 Exemplo de Uso
 Pergunta:
-
 “Qual é o objetivo principal do projeto descrito no documento?”
 
 Resposta esperada:
-
 O projeto visa desenvolver um sistema de chatbot capaz de responder perguntas com base em informações extraídas de documentos PDF, utilizando técnicas de Processamento de Linguagem Natural e Machine Learning.
 
 Fontes:
