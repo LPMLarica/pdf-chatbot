@@ -66,7 +66,7 @@ O sistema pode ser utilizado para:
 
 ## 1️⃣ Clonar o Repositório
 
-git clone https://github.com/seu-usuario/pdf-chatbot.git
+git clone https://github.com/LPMLarica/pdf-chatbot.git
 
 cd pdf-chatbot
 
